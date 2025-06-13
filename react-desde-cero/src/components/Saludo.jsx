@@ -1,10 +1,13 @@
+import { useState } from 'react';
 import './Saludo.css'
 // import foto from '.Assets'
-const Saludo = () => {
-  
+const Saludo = ({nombre}) => {
+  const [contador, setContador] = useState(0)
   return (
     <div className='saludar'>
-      <h1>Hola, mundo</h1>
+      <h1>Hola, {nombre}</h1>
+      <p>Hiciste click {contador} veces</p>
+      <button onClick={() => setContador(contador +1)}>Click</button>
       {/* <div className='caja'>Texto</div> */}
       <p>Este es un componente usando JSX</p>
       {/* <img src={foto} alt="" /> */}

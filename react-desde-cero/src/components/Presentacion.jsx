@@ -1,6 +1,6 @@
-const Presentacion = () => {
-    const nombre = "Lucía";
-    const edad = 25;
+const Presentacion = ({ nombre, edad} ) => {
+    // const nombre = "Lucía";
+    // const edad = 25;
   return (
     <div>
       <h1>Hola, soy {nombre} </h1>
