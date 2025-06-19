@@ -2,10 +2,10 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import Saludo from './components/Saludo'
+import Saludo from './components/Saludo (ejercicio)/Saludo'
 import Eventos from './components/Eventos'
 import InputNombre from './components/InputNombre'
-import Formulario from './components/Formulario'
+import Formulario from './components/formulario/Formulario'
 import Mensaje from './components/Mensaje'
 import Saludar from './components/Saludar'
 import Advertencia from './components/Advertencia'
@@ -13,7 +13,7 @@ import Ejemplo from './components/Ejemplo'
 import ToggleMensaje from './components/ToggleMensaje'
 import ListaFrutas from './components/ListaFrutas'
 import Usuarios from './components/Usuarios'
-import Tarjeta from './components/Tarjeta'
+import Tarjeta from './components/Tarjeta/Tarjeta'
 import ListaTarjetas from './components/ListaTarjetas'
 import EfectosEstados from './components/EfectosEstados'
 import EjemploUsuarios from './components/EjemploUsuarios'
@@ -22,6 +22,10 @@ import Home from './pages/Home'
 import About from './pages/About'
 import { Route, Routes } from 'react-router-dom'
 import Nav from './pages/Nav'
+import SimularEnvio from './components/formulario/SimularEnvio'
+import Caja from './components/Caja/Caja'
+import Boton from './components/Boton/Boton'
+import BotonDinamico from './components/BotonDinamico/BotonDinamico'
 // import Nombre from './components/Nombre'
 // import Presentacion from './components/Presentacion'
 // import Contador from './components/Contador'
@@ -58,12 +62,21 @@ function App() {
     {/* <EfectosEstados /> */}
       {/* <EjemploUsuarios /> */}
       {/* <Header /> */}
-      <Nav />
-     <Routes>
-        <Route path='/' element={<Home />} />
+      {/* <Nav /> */}
+     {/* <Routes>
+        <Route path='/' element={<Home />} /> */}
         {/* <Route path='/about' element={<Nav />} /> No se suele poner la nav acá */ } 
-        <Route path='/about' element={<About />} />
-     </Routes>
+        {/* <Route path='/about' element={<About />} />
+     </Routes> */}
+     {/* <Formulario /> */}
+     {/* <SimularEnvio /> */}
+     {/* <Caja /> */}
+     {/* <Boton /> */}
+     {/* <Saludo nombre="Jonatan"/> */}
+     {/* <BotonDinamico /> */}
+     <Tarjeta 
+    
+     />
     </>
   )
 }
