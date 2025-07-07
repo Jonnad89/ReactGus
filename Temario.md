@@ -1,7 +1,6 @@
 🧭 TEMARIO COMPLETO DE REACTJS CON VITE – NIVEL PRINCIPIANTE
-🟢 MÓDULO 1: INTRODUCCReact? ¿Por qué usarlo?
-IÓN Y PREPARACIÓN DEL ENTORNO
-¿Qué es 
+🟢 MÓDULO 1: INTRODUCCReact ¿Por qué usarlo?
+
 ¿Qué es Vite y por qué usarlo en lugar de Create React App?
 
 Instalación de Node.js y NPM

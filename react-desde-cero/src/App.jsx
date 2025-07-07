@@ -26,6 +26,9 @@ import SimularEnvio from './components/formulario/SimularEnvio'
 import Caja from './components/Caja/Caja'
 import Boton from './components/Boton/Boton'
 import BotonDinamico from './components/BotonDinamico/BotonDinamico'
+import Input from './components/inputNombre/Input'
+import MostrarNombre from './components/inputNombre/MostrarNombre'
+import CambiarColor from './components/Botón comunicación/CambiarColor'
 // import Nombre from './components/Nombre'
 // import Presentacion from './components/Presentacion'
 // import Contador from './components/Contador'
@@ -33,8 +36,44 @@ import BotonDinamico from './components/BotonDinamico/BotonDinamico'
 function App() {
   const [count, setCount] = useState(0)  
 
+
+  // Ejemplo en carpeta inputNombre
+  const [nombre, setNombre] = useState("");
+
+
+  // Ejemplo en carpeta boton comunicación
+
+  const [color, setColor] = useState("white");
+
+  const manejarCambioColor = (nuevoColor) => {
+    setColor(nuevoColor)
+  }
   return (
     <>
+
+
+    <h1>Ejemplo lifting state up</h1>
+      
+     <Input 
+     nombre ={nombre}
+     setNombre={setNombre}
+     />
+
+     <MostrarNombre 
+     nombre={nombre}
+     />
+
+     {/* Ejemplo carpeta boton comunicación */}
+
+      <div style={{backgroundColor: color, padding : "2rem", minHeight :"100vh"}}> 
+        <h1>Color actual: {color}</h1>
+        <CambiarColor 
+        onColorChange={manejarCambioColor}
+        />
+      </div>
+
+
+
           {/* <p>Contador: {count}</p>
       <button onClick={()=> setCount(count + 1)}>Incrementar</button>
       <button onClick={()=> setCount(count - 1)}>Decrementar</button> */}
@@ -74,9 +113,7 @@ function App() {
      {/* <Boton /> */}
      {/* <Saludo nombre="Jonatan"/> */}
      {/* <BotonDinamico /> */}
-     <Tarjeta 
-    
-     />
+     {/* <Tarjeta /> */}
     </>
   )
 }
