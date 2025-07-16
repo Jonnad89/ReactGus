@@ -29,6 +29,8 @@ import BotonDinamico from './components/BotonDinamico/BotonDinamico'
 import Input from './components/inputNombre/Input'
 import MostrarNombre from './components/inputNombre/MostrarNombre'
 import CambiarColor from './components/Botón comunicación/CambiarColor'
+import Productos from './pages/Productos'
+import DetalleProducto from './pages/DetalleProducto'
 // import Nombre from './components/Nombre'
 // import Presentacion from './components/Presentacion'
 // import Contador from './components/Contador'
@@ -51,8 +53,15 @@ function App() {
   return (
     <>
 
+{/* Hooks useLocation - useSearchParams */}
 
-    <h1>Ejemplo lifting state up</h1>
+    <Routes>
+      <Route path='/productos' element={<Productos />}/>
+      <Route path='/productos/id' element={<DetalleProducto />}/>
+      <Route />
+    </Routes>
+
+    {/* <h1>Ejemplo lifting state up</h1>
       
      <Input 
      nombre ={nombre}
@@ -61,16 +70,15 @@ function App() {
 
      <MostrarNombre 
      nombre={nombre}
-     />
-
+     /> */}
      {/* Ejemplo carpeta boton comunicación */}
 
-      <div style={{backgroundColor: color, padding : "2rem", minHeight :"100vh"}}> 
+      {/* <div style={{backgroundColor: color, padding : "2rem", minHeight :"100vh"}}> 
         <h1>Color actual: {color}</h1>
         <CambiarColor 
         onColorChange={manejarCambioColor}
         />
-      </div>
+      </div> */}
 
 
 
