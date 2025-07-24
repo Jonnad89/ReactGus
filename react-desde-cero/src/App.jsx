@@ -1,65 +1,52 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
 import './App.css'
-import Saludo from './components/Saludo (ejercicio)/Saludo'
-import Eventos from './components/Eventos'
-import InputNombre from './components/InputNombre'
-import Formulario from './components/formulario/Formulario'
-import Mensaje from './components/Mensaje'
-import Saludar from './components/Saludar'
-import Advertencia from './components/Advertencia'
-import Ejemplo from './components/Ejemplo'
-import ToggleMensaje from './components/ToggleMensaje'
-import ListaFrutas from './components/ListaFrutas'
-import Usuarios from './components/Usuarios'
-import Tarjeta from './components/Tarjeta/Tarjeta'
-import ListaTarjetas from './components/ListaTarjetas'
-import EfectosEstados from './components/EfectosEstados'
-import EjemploUsuarios from './components/EjemploUsuarios'
-import Header from './components/Header'
-import Home from './pages/Home'
-import About from './pages/About'
 import { Route, Routes } from 'react-router-dom'
-import Nav from './pages/Nav'
-import SimularEnvio from './components/formulario/SimularEnvio'
-import Caja from './components/Caja/Caja'
-import Boton from './components/Boton/Boton'
-import BotonDinamico from './components/BotonDinamico/BotonDinamico'
-import Input from './components/inputNombre/Input'
-import MostrarNombre from './components/inputNombre/MostrarNombre'
-import CambiarColor from './components/Botón comunicación/CambiarColor'
-import Productos from './pages/Productos'
-import DetalleProducto from './pages/DetalleProducto'
-// import Nombre from './components/Nombre'
-// import Presentacion from './components/Presentacion'
-// import Contador from './components/Contador'
+import Navbar from './components/Navbar/Navbar';
+import Home from './pages/pages/Home';
+import ListaPosts from './pages/pages/ListaPosts';
+import DetallePost from './pages/pages/DetallePost';
+import NuevoPost from './pages/pages/NuevoPost';
+
 
 function App() {
-  const [count, setCount] = useState(0)  
+
+  const [posts, setPosts] = useState([
+    { id:1, titulo: "Primer post", contenido : "Este es el contenido del primer post."},
+    { id:2, titulo: "Segundo post", contenido : "Contenido interesante del segundo post."}
+  ]);
+  
+  // const [count, setCount] = useState(0)  
 
 
-  // Ejemplo en carpeta inputNombre
-  const [nombre, setNombre] = useState("");
+  // // Ejemplo en carpeta inputNombre
+  // const [nombre, setNombre] = useState("");
 
 
-  // Ejemplo en carpeta boton comunicación
+  // // Ejemplo en carpeta boton comunicación
 
-  const [color, setColor] = useState("white");
+  // const [color, setColor] = useState("white");
 
-  const manejarCambioColor = (nuevoColor) => {
-    setColor(nuevoColor)
-  }
+  // const manejarCambioColor = (nuevoColor) => {
+  //   setColor(nuevoColor)
+  // }
   return (
     <>
-
+    <Navbar />
+    <Routes>
+    <Route path='/' element={<Home />} />
+    <Route path='/posts' element={<ListaPosts posts={posts} />}/>
+    <Route path='/posts/:id' element={<DetallePost posts={posts}/>}/>
+    <Route path='/nuevo' element={<NuevoPost setPosts={setPosts} posts={posts}/>}/>
+    <Route path='*' element={<h2>Página no encontrada</h2>}/>
+</Routes>
 {/* Hooks useLocation - useSearchParams */}
 
-    <Routes>
+    {/* <Routes>
       <Route path='/productos' element={<Productos />}/>
       <Route path='/productos/id' element={<DetalleProducto />}/>
       <Route />
-    </Routes>
+    </Routes> */}
 
     {/* <h1>Ejemplo lifting state up</h1>
       
