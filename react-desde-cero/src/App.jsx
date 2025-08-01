@@ -1,12 +1,14 @@
 import { useState } from 'react'
 
 import './App.css'
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes,Link } from 'react-router-dom'
 import Navbar from './components/Navbar/Navbar';
 import Home from './pages/pages/Home';
 import ListaPosts from './pages/pages/ListaPosts';
 import DetallePost from './pages/pages/DetallePost';
 import NuevoPost from './pages/pages/NuevoPost';
+import PokemonList from './components/pokemon/PokemonList';
+import PokemonDetalle from './components/pokemon/PokemonDetalle';
 
 
 function App() {
@@ -32,13 +34,15 @@ function App() {
   // }
   return (
     <>
-    <Navbar />
+    {/* <Navbar /> */}
     <Routes>
-    <Route path='/' element={<Home />} />
+<Route path='/pokemon' element={<PokemonList />} />
+<Route path='pokemon/:nombre' element={<PokemonDetalle />} />
+    {/* <Route path='/' element={<Home />} />
     <Route path='/posts' element={<ListaPosts posts={posts} />}/>
     <Route path='/posts/:id' element={<DetallePost posts={posts}/>}/>
     <Route path='/nuevo' element={<NuevoPost setPosts={setPosts} posts={posts}/>}/>
-    <Route path='*' element={<h2>Página no encontrada</h2>}/>
+    <Route path='*' element={<h2>Página no encontrada</h2>}/> */}
 </Routes>
 {/* Hooks useLocation - useSearchParams */}
 
